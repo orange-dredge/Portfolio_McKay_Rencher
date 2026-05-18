@@ -75,53 +75,93 @@
         <section id="projects">
             <h2>Featured Projects</h2>
             
-            <!-- Project 1 -->
-            <article>
-                <h3>Project Title One</h3>
-                <p>A brief description of the project, the tech stack used, and the problem it solves.</p>
-                <a href="https://github.com/yourusername" target="_blank">View Code</a>
-            </article>
+            <div class="project-tabs">
+                <button class="tab-btn active" data-project="jimachine">Image Machine Desktop application</button>
+                <button class="tab-btn" data-project="chat-server">Task Basket</button>
+                <button class="tab-btn" data-project="bluetooth-security">Responsive Multi-Page Web Applications</button>
+            </div>
 
-            <!-- Project 2 -->
-            <article>
-                <h3>Project Title Two</h3>
-                <p>A brief description of another application or system you have developed.</p>
-                <a href="https://github.com/yourusername" target="_blank">View Code</a>
-            </article>
+            <div class="project-container">
+                
+                <article id="jimachine" class="project-card active">
+                    <h3>Image Machine Desktop applications</h3>
+                    <p class="project-description">
+                        A desktop application developed in JavaFX designed for efficient image viewing, dynamic album tracking, and asset micro-management. Features an interactive user interface built with advanced tracking functionalities, real-time image rendering components, and structured saving mechanisms.
+                    </p>
+                    <div class="project-tech">
+                        <strong>Tech Stack:</strong> Java, JavaFX, Object-Oriented Design
+                    </div>
+                    
+                </article>
+
+                <article id="chat-server" class="project-card">
+                    <h3>Task Basket</h3>
+                    <p class="project-description">
+                        Collaborated in a team environment to develop a task management application using Python and Kivy. Implemented features for organizing, tracking, and managing user tasks through a graphical interface. Applied object-oriented programming principles and participated in collaborative development workflows
+                    </p>
+                    <div class="project-tech">
+                        <strong>Tech Stack:</strong> Python, kivy, github, MVC Design
+                    </div>
+                
+                </article>
+
+                <article id="bluetooth-security" class="project-card">
+                    <h3>Responsive Multi-Page Web Application</h3>
+                    <p class="project-description">
+                        Developed a fully responsive, multi-page website utilizing CSS media queries and flexible layouts to ensure seamless performance across mobile, tablet, and desktop screens. Built custom JavaScript form validation algorithms to handle user input, prevent erroneous submissions, and provide real-time, accessible error feedback.
+                    </p>
+                    <div class="project-tech">
+                        <strong>Tech Stack:</strong>  JavaScript, HTML5, CSS, Git
+                    </div>
+                    <a href="https://aboutmepagemckayrencher.netlify.app/" target="_blank" class="project-btn">View Website</a>
+                
+                </article>
+                
+            </div>
         </section>
 
         <!-- Contact Section (Configured for Netlify Forms) -->
         <section id="contact">
             <h2>Get In Touch</h2>
-            <p>Have a question or want to work together? Drop a message below.</p>
-            
-            <form name="portfolio-contact" method="POST" data-netlify="true">
-                <div>
-                    <label for="name">Name:</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
-                
-                <div>
-                    <label for="email">Email:</label>
-                    <input type="type" id="email" name="email" required>
-                </div>
-                
-                <div>
-                    <label for="message">Message:</label>
-                    <textarea id="message" name="message" required></textarea>
-                </div>
-                
-                <button type="submit">Send Message</button>
-            </form>
-        </section>
+            <p>Have a question. Feel free to email me anytime.</p>
+            <a href="mckaydrencher@gmail.com">MckaydRencher@gmail.com</a>
 
     </main>
 
     <!-- Footer Area -->
     <footer>
-        <p>&copy; 2026 McKay Rencher. All rights reserved.</p>
-        <p><a href="https://github.com/orange-dredge" target="_blank">GitHub</a> | <a href="https://linkedin.com/in/yourusername" target="_blank">LinkedIn</a></p>
+        <!-- <p>&copy; 2026 McKay Rencher. All rights reserved.</p> -->
+        <p><a href="https://github.com/orange-dredge" target="_blank">GitHub</a> | <a href="https://www.linkedin.com/in/mckay-rencher-09264640b/" target="_blank">LinkedIn</a></p>
     </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+    // Collect all tab elements and target project cards
+    const tabButtons = document.querySelectorAll('.tab-btn');
+    const projectCards = document.querySelectorAll('.project-card');
 
+    tabButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            
+            // 1. Clear out the active styling state from all tab buttons
+            tabButtons.forEach(btn => btn.classList.remove('active'));
+            
+            // 2. Assign the active styling class to the chosen target tab
+            button.classList.add('active');
+
+            // 3. Extract the metadata string from the data attribute
+            const targetedSelection = button.getAttribute('data-project');
+
+            // 4. Toggle visibility across all available cards 
+            projectCards.forEach(card => {
+                if (card.id === targetedSelection) {
+                    card.classList.add('active'); // Reveals the matching item
+                } else {
+                    card.classList.remove('active'); // Conceals all others
+                }
+            });
+        });
+    });
+});
+    </script>
 </body>
 </html>
