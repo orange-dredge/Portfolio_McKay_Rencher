@@ -3,14 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio | Test Deployment</title>
-
-
-
+    <title>Developer Portfolio</title>
+    
+    <!-- This links your HTML to your external CSS document -->
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-    <p>
-        Test Website
-    </p>
+
+    <!-- Header / Navigation -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content Area -->
+    <main>
+
+        <!-- About Me Section -->
+        <section id="about">
+            <h1>Your Name</h1>
+            <h2>Software Engineering Student</h2>
+            <p>Welcome to my portfolio. I am a junior computer science student focused on building clean, efficient, and impactful applications.</p>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects">
+            <h2>Featured Projects</h2>
+            
+            <!-- Project 1 -->
+            <article>
+                <h3>Project Title One</h3>
+                <p>A brief description of the project, the tech stack used, and the problem it solves.</p>
+                <a href="https://github.com/yourusername" target="_blank">View Code</a>
+            </article>
+
+            <!-- Project 2 -->
+            <article>
+                <h3>Project Title Two</h3>
+                <p>A brief description of another application or system you have developed.</p>
+                <a href="https://github.com/yourusername" target="_blank">View Code</a>
+            </article>
+        </section>
+
+        <!-- Contact Section (Configured for Netlify Forms) -->
+        <section id="contact">
+            <h2>Get In Touch</h2>
+            <p>Have a question or want to work together? Drop a message below.</p>
+            
+            <form name="portfolio-contact" method="POST" data-netlify="true">
+                <div>
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                
+                <div>
+                    <label for="email">Email:</label>
+                    <input type="type" id="email" name="email" required>
+                </div>
+                
+                <div>
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+
+    </main>
+
+    <!-- Footer Area -->
+    <footer>
+        <p>&copy; 2026 Your Name. All rights reserved.</p>
+        <p><a href="https://github.com/yourusername" target="_blank">GitHub</a> | <a href="https://linkedin.com/in/yourusername" target="_blank">LinkedIn</a></p>
+    </footer>
+
 </body>
+</html>
