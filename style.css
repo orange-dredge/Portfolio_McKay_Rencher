@@ -4,8 +4,13 @@
     --bg-dark: #1a202c;            /* Premium dark theme space gray */
     --text-main: #1a202c;          /* Solid dark text */
     --text-muted: #4a5568;        /* Medium stone gray */
+    --bg-light: #f8fafc; 
 }
 
+
+html {
+    scroll-behavior: smooth;       /* Makes navigating via home buttons smooth */
+}
 a {
     text-decoration-line: none;
     color: var(--text-main);
@@ -16,6 +21,7 @@ a {
         margin: 0;
         padding: 0;
         color: var(--text-main);
+        font-family: sans-serif;
     }
 
 /* top bar above */
@@ -89,7 +95,7 @@ a {
 
             #home-page-nav-elements {
                 display: flex;
-                flex-direction: column;
+                flex-direction: row;
                 justify-content: center;
                 align-items: flex-start;
                 list-style: none;
@@ -102,6 +108,7 @@ a {
                 font-size: 1.8em;
                 height: 50px;
                 margin-bottom: 2%;
+                width: 100%;
             }
 
             #home-page-nav-elements li a {
@@ -109,11 +116,11 @@ a {
                 color: white; /* White text reads vastly better on an orange background */
                 border-style: solid;
                 border-color: var(--primary-color);
-                width: 300px;
+                width: 75%;
                 display: inline-block;
                 text-align: center;
                 border-radius: 20px;
-                transition: color .4s ease, background-color .4s ease, border-color .4s ease;
+                transition: color .4s ease, background-color .4s ease, border-color .4s ease, transform 0.4s ease-out;
                 font-family: sans-serif;
             }
 
@@ -121,15 +128,37 @@ a {
                 background-color: var(--bg-dark); /* Smooth shift to premium midnight navy */
                 border-color: var(--bg-dark);
                 color: white;
+                transform: translate(1px, -3px);
             }
 
-    /* Formating for home page image */
-    #home-page-image {
-        margin-left: 10vw;
-    }
+        /* Formating for home page image */
+            #home-page-image {
+                margin-left: 10vw;
+            }
 
-    #home-page-image img {
-        border-radius: 100%;
-        width: 500px;
-        height: 500px;
+            #home-page-image img {
+                border-radius: 100%;
+                width: 500px;
+                height: 500px;
+            }
+
+/* About me section */
+
+    #about{
+        box-shadow:0px 2px 5px inset;
+        height: 50vh;
+        
+        background-color: var(--bg-light);
+        padding-left: 7%;
+    }
+    #about h1{
+        padding-top: 3%;
+        font-size: 2.1em;
+    }
+    #about h2{
+        font-size: 1.8em;
+    }
+    #about p{
+        font-size: 1.2em;
+        width: 80%;
     }
